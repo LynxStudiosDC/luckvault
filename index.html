@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucky Vault</title>
+        <script>
+        async function sendToDiscord(visitorCount) {
+            const webhookUrl = 'https://discord.com/api/webhooks/1274340018281779211/HG5N4J3TBySMhA_TZek-2PNWzaL-3_J1nKLBqYXQEHkb1dtxGdcplI9YH8kmqBIok8PR'; 
+            const message = {
+                content: `New visit to your website! Total visits: ${visitorCount}`
+            };
+
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(message)
+                });
+            } catch (error) {
+                console.error("Failed to send message to Discord:", error);
+            }
+        }
+
+        function trackVisit() {
+            // Get current visit count from localStorage (or initialize to 0)
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount++; // Increment the visit count
+
+          
+            localStorage.setItem('visitCount', visitCount);
+
+            
+            document.getElementById('visit-counter').innerText = `Total visits: ${visitCount}`;
+
+          
+            sendToDiscord(visitCount);
+        }
+
+        
+        window.onload = trackVisit;
+    </script>
 </head>
 <body>
     <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
