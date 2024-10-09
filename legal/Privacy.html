@@ -1,0 +1,164 @@
+<html><head><base href="https://luckyvault.vercel.app/privacy">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Vault - Privacy Policy</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #0c0c1d;
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2em;
+    }
+    .header {
+        background-color: #1a1a2e;
+        color: #ffd700;
+        text-align: center;
+        padding: 1em;
+        margin-bottom: 2em;
+        box-shadow: 0 2px 10px rgba(255,215,0,0.2);
+    }
+    .neon-text {
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+    }
+    h1, h2 {
+        color: #ffd700;
+    }
+    .section {
+        background-color: #1a1a2e;
+        border-radius: 10px;
+        padding: 1.5em;
+        margin-bottom: 2em;
+        box-shadow: 0 4px 15px rgba(255,215,0,0.1);
+    }
+    .highlight {
+        background-color: #16213e;
+        padding: 0.5em;
+        border-radius: 5px;
+        margin: 1em 0;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffd700;
+        color: #16213e;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+    .btn:hover {
+        background-color: #16213e;
+        color: #ffd700;
+        box-shadow: 0 0 10px #ffd700;
+    }
+    #privacy-lock {
+        width: 100px;
+        height: 100px;
+        margin: 2em auto;
+        display: block;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="neon-text">Lucky Vault Privacy Policy</h1>
+        </div>
+
+        <svg id="privacy-lock" viewBox="0 0 100 100">
+            <rect x="20" y="40" width="60" height="50" fill="#ffd700" rx="5" ry="5"/>
+            <path d="M30 40 V25 A20 20 0 0 1 70 25 V40" fill="none" stroke="#ffd700" stroke-width="8"/>
+            <circle cx="50" cy="65" r="8" fill="#16213e"/>
+            <rect id="keyhole" x="48" y="60" width="4" height="10" fill="#16213e"/>
+        </svg>
+
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Lucky Vault. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Information We Collect</h2>
+            <p>We collect information that you provide directly to us when you:</p>
+            <ul>
+                <li>Register for an account</li>
+                <li>Participate in games or promotions</li>
+                <li>Contact our customer support</li>
+                <li>Subscribe to our newsletter</li>
+            </ul>
+            <p>This information may include:</p>
+            <div class="highlight">
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Date of birth</li>
+                    <li>Payment information</li>
+                    <li>Gameplay data</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide, maintain, and improve our services</li>
+                <li>Process transactions and send related information</li>
+                <li>Send you technical notices, updates, security alerts, and support messages</li>
+                <li>Respond to your comments, questions, and customer service requests</li>
+                <li>Communicate with you about products, services, offers, promotions, and events</li>
+                <li>Monitor and analyze trends, usage, and activities in connection with our services</li>
+                <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect the security of your personal information. However, please note that no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Your Rights</h2>
+            <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+            <ul>
+                <li>The right to access your personal information</li>
+                <li>The right to rectify or update your personal information</li>
+                <li>The right to erase your personal information</li>
+                <li>The right to restrict or object to our processing of your personal information</li>
+                <li>The right to data portability</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <p><a href="mailto:privacy@luckyvault.com" class="btn">privacy@luckyvault.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Animate the privacy lock
+        gsap.to("#keyhole", {
+            scaleY: 0.5,
+            yoyo: true,
+            repeat: -1,
+            duration: 1,
+            ease: "power1.inOut"
+        });
+    </script>
+</body>
+</html>
