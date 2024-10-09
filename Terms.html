@@ -1,0 +1,196 @@
+<html><head><base href="https://luckyvault.vercel.app/terms">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Vault - Terms of Service</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #0c0c1d;
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2em;
+    }
+    .header {
+        background-color: #1a1a2e;
+        color: #ffd700;
+        text-align: center;
+        padding: 1em;
+        margin-bottom: 2em;
+        box-shadow: 0 2px 10px rgba(255,215,0,0.2);
+    }
+    .neon-text {
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+    }
+    h2 {
+        color: #ffd700;
+        border-bottom: 2px solid #ffd700;
+        padding-bottom: 0.5em;
+        margin-top: 1.5em;
+    }
+    p {
+        margin-bottom: 1em;
+    }
+    ul {
+        padding-left: 2em;
+    }
+    .important {
+        background-color: rgba(255, 215, 0, 0.1);
+        border-left: 4px solid #ffd700;
+        padding: 1em;
+        margin: 1em 0;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffd700;
+        color: #16213e;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s;
+        margin-top: 1em;
+    }
+    .btn:hover {
+        background-color: #16213e;
+        color: #ffd700;
+        box-shadow: 0 0 10px #ffd700;
+    }
+    #terms-animation {
+        width: 100%;
+        height: 200px;
+        margin: 2em 0;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="neon-text">Lucky Vault</h1>
+            <h2>Terms of Service</h2>
+        </div>
+
+        <section id="terms-animation"></section>
+
+        <p>Welcome to Lucky Vault. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. Please read these carefully.</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By using Lucky Vault, you agree to these terms of service in full. If you disagree with these terms or any part of them, you must not use our website.</p>
+
+        <h2>2. Changes to Terms</h2>
+        <p>We may revise these terms of service at any time by amending this page. Please check this page regularly to ensure you are familiar with the current version.</p>
+
+        <h2>3. Access to the Website</h2>
+        <p>Access to our website is permitted on a temporary basis, and we reserve the right to withdraw or amend the service we provide without notice.</p>
+
+        <h2>4. User Account</h2>
+        <ul>
+            <li>You must be at least 18 years old to create an account.</li>
+            <li>You are responsible for maintaining the confidentiality of your account and password.</li>
+            <li>You agree to accept responsibility for all activities that occur under your account.</li>
+        </ul>
+
+        <h2>5. Responsible Gaming</h2>
+        <div class="important">
+            <p>Lucky Vault promotes responsible gaming. We provide tools to help you manage your gaming activity, including:</p>
+            <ul>
+                <li>Deposit limits</li>
+                <li>Self-exclusion options</li>
+                <li>Reality checks</li>
+            </ul>
+            <p>If you feel you may have a gambling problem, please seek help immediately.</p>
+        </div>
+
+        <h2>6. Intellectual Property</h2>
+        <p>The content on our website, including but not limited to text, graphics, logos, and software, is the property of Lucky Vault and protected by copyright laws.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>Lucky Vault will not be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, arising from the use of our website.</p>
+
+        <h2>8. Governing Law</h2>
+        <p>These terms of service shall be governed by and construed in accordance with the laws of the jurisdiction in which Lucky Vault operates.</p>
+
+        <p>By using Lucky Vault, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+
+        <a href="https://luckyvault.vercel.app/home" class="btn">Return to Home</a>
+    </div>
+
+    <script>
+        // Animation for the terms
+        const terms = ["Fairness", "Security", "Responsibility", "Entertainment"];
+        const colors = ["#ffd700", "#e0e0e0", "#4a4a8f", "#ff6b6b"];
+
+        const container = document.getElementById('terms-animation');
+
+        terms.forEach((term, index) => {
+            const termElement = document.createElement('div');
+            termElement.textContent = term;
+            termElement.style.position = 'absolute';
+            termElement.style.fontSize = '24px';
+            termElement.style.fontWeight = 'bold';
+            termElement.style.opacity = 0;
+            container.appendChild(termElement);
+
+            gsap.to(termElement, {
+                opacity: 1,
+                duration: 1,
+                delay: index * 1.5,
+                x: 100 * index,
+                y: 100,
+                color: colors[index],
+                ease: "power2.inOut",
+                onComplete: () => {
+                    gsap.to(termElement, {
+                        opacity: 0,
+                        duration: 1,
+                        delay: 1,
+                        onComplete: () => {
+                            termElement.remove();
+                        }
+                    });
+                }
+            });
+        });
+
+        // Repeating animation
+        setInterval(() => {
+            terms.forEach((term, index) => {
+                const termElement = document.createElement('div');
+                termElement.textContent = term;
+                termElement.style.position = 'absolute';
+                termElement.style.fontSize = '24px';
+                termElement.style.fontWeight = 'bold';
+                termElement.style.opacity = 0;
+                container.appendChild(termElement);
+
+                gsap.to(termElement, {
+                    opacity: 1,
+                    duration: 1,
+                    delay: index * 1.5,
+                    x: 100 * index,
+                    y: 100,
+                    color: colors[index],
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        gsap.to(termElement, {
+                            opacity: 0,
+                            duration: 1,
+                            delay: 1,
+                            onComplete: () => {
+                                termElement.remove();
+                            }
+                        });
+                    }
+                });
+            });
+        }, terms.length * 1500 + 2000);
+    </script>
+</body>
+</html>
